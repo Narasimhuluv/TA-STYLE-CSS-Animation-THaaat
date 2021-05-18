@@ -1,0 +1,307 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.first-content, .second-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  border: 10px solid brown;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: brown;
+}
+
+.box .inside {
+  width: 150px;
+  background-color: white;
+  height: 150px;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.box .f1:hover {
+  -webkit-transform: rotate(20deg);
+          transform: rotate(20deg);
+}
+
+.box .f2:hover {
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+}
+
+.box .f3:hover {
+  -webkit-transform: rotate(-110deg);
+          transform: rotate(-110deg);
+}
+
+.box .s1:hover {
+  -webkit-transform: translate(20px, 20px);
+          transform: translate(20px, 20px);
+}
+
+.box .s2:hover {
+  -webkit-transform: translate(20px, -20px);
+          transform: translate(20px, -20px);
+}
+
+.box .s3:hover {
+  -webkit-transform: translate(-20px, 20px);
+          transform: translate(-20px, 20px);
+}
+
+.box .t1:hover {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.box .t2:hover {
+  -webkit-transform: scale(1.5, 1.5);
+          transform: scale(1.5, 1.5);
+}
+
+.box .t3:hover {
+  -webkit-transform: scale(1.3, 0.5);
+          transform: scale(1.3, 0.5);
+}
+
+.box .fo1:hover {
+  -webkit-transform: skew(30deg, -20deg);
+          transform: skew(30deg, -20deg);
+}
+
+.box .fo2:hover {
+  -webkit-transform: skew(-10deg, 20deg);
+          transform: skew(-10deg, 20deg);
+}
+
+.box .fo3:hover {
+  -webkit-transform: skew(10deg, 10deg);
+          transform: skew(10deg, 10deg);
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+.box .p1:hover {
+  -webkit-transform: perspective(200px) rotateY(45deg);
+          transform: perspective(200px) rotateY(45deg);
+}
+
+.box .p2:hover {
+  -webkit-transform: perspective(200px) rotateY(-45deg);
+          transform: perspective(200px) rotateY(-45deg);
+}
+
+.box .p3:hover {
+  -webkit-transform: perspective(200px) rotateX(45deg);
+          transform: perspective(200px) rotateX(45deg);
+}
+
+.animation_container {
+  width: 100%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.animation_container:hover .box_animation {
+  -webkit-animation: circle 5s linear 5 alternate;
+          animation: circle 5s linear 5 alternate;
+  border-radius: 50%;
+}
+
+.box_animation {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 4px;
+  -webkit-transition: all 1s linear;
+  transition: all 1s linear;
+  position: relative;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    background-color: orangered;
+    left: 0;
+  }
+  25% {
+    background-color: green;
+    left: 250px;
+  }
+  50% {
+    background-color: red;
+    left: 500px;
+  }
+  75% {
+    background-color: violet;
+    left: 650px;
+  }
+  100% {
+    background-color: yellowgreen;
+    left: 700px;
+  }
+}
+
+@keyframes circle {
+  0% {
+    background-color: orangered;
+    left: 0;
+  }
+  25% {
+    background-color: green;
+    left: 250px;
+  }
+  50% {
+    background-color: red;
+    left: 500px;
+  }
+  75% {
+    background-color: violet;
+    left: 650px;
+  }
+  100% {
+    background-color: yellowgreen;
+    left: 700px;
+  }
+}
+
+button {
+  border: 0;
+  margin: 10rem 0;
+  background-color: #ff4400;
+  border-radius: 5px;
+  color: #ffff;
+  cursor: pointer;
+  outline: none;
+  padding: 10px 30px;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+button:active {
+  -webkit-box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 3px 12px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.card-container {
+  height: 150px;
+  -webkit-perspective: 600;
+          perspective: 600;
+  position: relative;
+  width: 150px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.card:hover {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.card .side {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.card .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+/*# sourceMappingURL=style.css.map */

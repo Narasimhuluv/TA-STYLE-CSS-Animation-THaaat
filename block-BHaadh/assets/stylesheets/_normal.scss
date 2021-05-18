@@ -1,0 +1,219 @@
+.container{
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto;
+    // border: 1px solid red;
+    
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+.first-content, .second-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
+    
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border: 10px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    .inside{
+        width: 150px;
+        background-color: white;
+        height: 150px;
+        transition: all 0.5s ease-in;
+    }
+}
+.box .f1{
+    &:hover{
+        transform: rotate(20deg);
+    }
+}
+
+.box .f2{
+    
+    &:hover{
+        transform: rotate(50deg);
+    }
+}
+.box .f3{
+    &:hover{
+        transform:  rotate(-110deg);
+    }
+}
+
+// second ------------
+.box .s1{
+    &:hover{
+        transform: translate(20px, 20px);
+    }
+}
+
+.box .s2{
+    &:hover{
+        transform: translate(20px, -20px);
+    }
+}
+
+.box .s3{
+    &:hover{
+        transform: translate(-20px, 20px);
+    }
+}
+
+// -----------third
+
+
+.box .t1{
+    &:hover{
+        transform: scale(0.5);
+}
+    }
+.box .t2{
+    &:hover{
+        transform:  scale(1.5,1.5);
+    }
+}
+.box .t3{
+    &:hover{
+        transform: scale(1.3,0.5);
+    }
+}
+
+.box .fo1{
+    &:hover{
+        transform: skew(30deg,-20deg);
+    }
+}
+
+.box .fo2{
+    &:hover{
+        transform: skew(-10deg,20deg);
+    }
+}
+
+.box .fo3{
+    &:hover{
+        transform: skew(10deg,10deg);
+    }
+}
+// ------------------perspective
+
+img{
+    width: 150px;
+    height: 150px;
+}
+.box .p1{
+   
+    &:hover{
+        transform: perspective(200px) rotateY(45deg);
+    }
+}
+
+.box .p2{
+    &:hover{
+        transform: perspective(200px) rotateY(-45deg);
+    }
+}
+.box .p3{
+    &:hover{
+        transform: perspective(200px) rotateX(45deg);
+    }
+}
+
+// -------------------------------------animation
+
+.animation_container{
+    width: 100%;
+    height: 300px;
+    // border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    &:hover .box_animation{
+        animation: circle 5s linear 5 alternate;
+        border-radius: 50%;
+    }
+  
+   
+}
+
+.box_animation{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 4px;
+    transition: all 1s linear;
+    position: relative;
+ 
+@keyframes circle {
+    0%{
+        background-color: orangered;
+        left: 0;
+    }25%{
+        background-color: green;
+        left: 250px;
+    }50%{
+        background-color: red;
+        left: 500px;
+    }75%{
+        background-color: violet;
+        left: 650px;
+    }100%{
+        background-color: yellowgreen;
+        left: 700px;
+    }
+
+}
+    
+}
+button{
+    border: 0;
+    margin: 10rem 0;
+    background-color: rgb(255, 68, 0);
+    border-radius: 5px;
+    color: #ffff;
+    cursor: pointer;
+    outline: none;
+    padding: 10px 30px;
+    transition: all 0.5s linear;
+    &:active{
+        box-shadow: 0 3px 12px 2px rgba(#000,0.5);
+        transform: translateY(3px);
+    }
+}
+
+
+.card-container {
+    height: 150px;
+    perspective: 600;
+    position: relative;
+    width: 150px;
+  }
+
+  .card{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: all 1s ease-in-out;
+      &:hover{
+          transform: rotateY(180deg);
+      }
+  }
+  .card .side{
+      backface-visibility: hidden;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+  }
+  .card .back{
+      transform: rotateY(180deg);
+  }
